@@ -9,6 +9,8 @@ app = Flask(__name__)
 
 APP_ROOT = os.path.dirname(os.path.abspath(__file__))
 
+model_path = "models/instance_norm/udnie.t7"
+
 def run_model():
     image_path = "static/content.jpg"
 
@@ -69,8 +71,8 @@ def upload():
         destination = "/".join([target, "content.jpg"])
         print(destination)
         file.save(destination)
-        d2 = os.path.join(APP_ROOT, 'images/content/content.jpg')
-        file.save(d2)
+        # d2 = os.path.join(APP_ROOT, 'images/content/content.jpg')
+        # file.save(d2)
         # file_name=filename
 
     run_model()
